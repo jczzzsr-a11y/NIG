@@ -1,6 +1,4 @@
-# NIG
-NE>&lt;US
-html
+
 <!DOCTYPE html>
 <html lang="en" class="h-full bg-slate-950 text-slate-100">
 <head>
