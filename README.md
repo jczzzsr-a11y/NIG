@@ -1,4 +1,333 @@
+html
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-950 text-slate-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Infrastructure Group LLC — Portal</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#0b0f19',
+                        navydark: '#111827',
+                        cyanglow: '#0ea5e9',
+                        emeraldglow: '#10b981',
+                        amberglow: '#f59e0b',
+                        roseglow: '#ef4444'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Glowing Visual Effects */
+        .glow-box-cyan {
+            box-shadow: 0 0 15px rgba(14, 165, 233, 0.2);
+        }
+        .glow-box-emerald {
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.25);
+        }
+        .scanline {
+            background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.03) 50%, rgba(0,0,0,0.3) 51%, rgba(0,0,0,0));
+            background-size: 100% 4px;
+        }
+        /* Custom Lock Dial Animation */
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.03); }
+        }
+        .pulse-active {
+            animation: pulseGlow 2s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen font-sans bg-slate-950 text-slate-100 flex flex-col justify-between scanline selection:bg-cyanglow/30 selection:text-cyan-200">
 
+    <!-- HEADER / TOP BRAND BANNER -->
+    <header class="bg-slate-900/90 border-b border-slate-800 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-col md:flex-row items-center justify-between gap-4">
+            
+            <!-- Company Logo & Name -->
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-cyan-600 to-blue-500 flex items-center justify-center font-bold text-slate-950 text-xl shadow-lg shadow-cyan-500/20">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold tracking-tight text-slate-100">Nexus Infrastructure Group LLC</h1>
+                    <p class="text-xs text-slate-400">Enterprise Systems & Secure Operations</p>
+                </div>
+            </div>
+
+            <!-- Generic Contact Info Banner -->
+            <div class="flex flex-wrap items-center justify-center gap-4 text-xs text-slate-300">
+                <a href="mailto:support@nexusinfra.com" class="flex items-center space-x-1.5 hover:text-cyan-400 transition-colors bg-slate-800/60 px-3 py-1.5 rounded-md border border-slate-700/50">
+                    <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    <span>support@nexusinfra.com</span>
+                </a>
+                <a href="tel:+18005550199" class="flex items-center space-x-1.5 hover:text-cyan-400 transition-colors bg-slate-800/60 px-3 py-1.5 rounded-md border border-slate-700/50">
+                    <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                    </svg>
+                    <span>+1 (800) 555-0199</span>
+                </a>
+                <div class="hidden lg:flex items-center space-x-1.5 bg-slate-800/60 px-3 py-1.5 rounded-md border border-slate-700/50 text-slate-400">
+                    <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    <span>Corporate HQ • Suite 400, Chicago IL</span>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- MAIN BODY WRAPPER -->
+    <main class="flex-grow max-w-5xl w-full mx-auto px-4 py-8 flex flex-col gap-8">
+
+        <!-- SPLASH / HERO INTRO SECTION -->
+        <section class="bg-slate-900/50 rounded-2xl p-6 md:p-10 border border-slate-800 shadow-xl relative overflow-hidden">
+            <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="max-w-3xl space-y-4">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-cyan-950 text-cyan-400 border border-cyan-800/50">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                    Portal Entrance Active
+                </span>
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white">
+                    Nexus Infrastructure Operations Hub
+                </h2>
+                <p class="text-slate-300 text-base leading-relaxed">
+                    Welcome to the central gateway for Nexus Infrastructure Group LLC. This landing page provides client directory access, system status metrics, and internal operational resource control.
+                </p>
+            </div>
+        </section>
+
+        <!-- VISUAL ACCESS CONTROL GATE / LOCK MECHANISM -->
+        <section id="lockSection" class="bg-slate-900/90 rounded-2xl border border-slate-800 p-6 md:p-8 shadow-2xl relative transition-all duration-500">
+            
+            <div class="text-center max-w-xl mx-auto space-y-3">
+                <!-- Visual Status Icon -->
+                <div id="lockIconContainer" class="w-16 h-16 mx-auto rounded-full bg-cyan-950/80 border border-cyan-500/30 flex items-center justify-center glow-box-cyan transition-all duration-300">
+                    <svg id="lockIcon" class="w-8 h-8 text-cyan-400 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                </div>
+                
+                <h3 id="lockTitle" class="text-xl font-bold text-white">Security Gateway Verification</h3>
+                <p id="lockSubtitle" class="text-sm text-slate-400">
+                    Perform visual verification below by selecting the required security pattern sequence to unseal the protected infrastructure assets.
+                </p>
+            </div>
+
+            <!-- Visual Key Lock Panel -->
+            <div id="lockMechanism" class="mt-8 bg-slate-950/80 p-6 rounded-xl border border-slate-800 max-w-md mx-auto space-y-6">
+                
+                <!-- Target Visual Pattern Prompt -->
+                <div class="text-center space-y-2">
+                    <span class="text-xs uppercase tracking-wider font-mono text-slate-400">Verification Pattern Code:</span>
+                    <div id="codeDisplay" class="flex justify-center items-center gap-3 font-mono text-xl font-bold">
+                        <span class="px-3 py-1 rounded bg-slate-900 border border-cyan-500/30 text-cyan-400 shadow-inner">3</span>
+                        <span class="px-3 py-1 rounded bg-slate-900 border border-cyan-500/30 text-cyan-400 shadow-inner">8</span>
+                        <span class="px-3 py-1 rounded bg-slate-900 border border-cyan-500/30 text-cyan-400 shadow-inner">1</span>
+                    </div>
+                </div>
+
+                <!-- Interactive Keypad -->
+                <div class="grid grid-cols-3 gap-3">
+                    <button onclick="pressKey('1')" class="py-3 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 hover:border-cyan-500/50 hover:bg-slate-800 active:scale-95 transition text-lg font-mono font-semibold">1</button>
+                    <button onclick="pressKey('2')" class="py-3 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 hover:border-cyan-500/50 hover:bg-slate-800 active:scale-95 transition text-lg font-mono font-semibold">2</button>
+                    <button onclick="pressKey('3')" class="py-3 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 hover:border-cyan-500/50 hover:bg-slate-800 active:scale-95 transition text-lg font-mono font-semibold">3</button>
+                    <button onclick="pressKey('4')" class="py-3 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 hover:border-cyan-500/50 hover:bg-slate-800 active:scale-95 transition text-lg font-mono font-semibold">4</button>
+                    <button onclick="pressKey('5')" class="py-3 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 hover:border-cyan-500/50 hover:bg-slate-800 active:scale-95 transition text-lg font-mono font-semibold">5</button>
+                    <button onclick="pressKey('6')" class="py-3 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 hover:border-cyan-500/50 hover:bg-slate-800 active:scale-95 transition text-lg font-mono font-semibold">6</button>
+                    <button onclick="pressKey('7')" class="py-3 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 hover:border-cyan-500/50 hover:bg-slate-800 active:scale-95 transition text-lg font-mono font-semibold">7</button>
+                    <button onclick="pressKey('8')" class="py-3 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 hover:border-cyan-500/50 hover:bg-slate-800 active:scale-95 transition text-lg font-mono font-semibold">8</button>
+                    <button onclick="pressKey('9')" class="py-3 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 hover:border-cyan-500/50 hover:bg-slate-800 active:scale-95 transition text-lg font-mono font-semibold">9</button>
+                </div>
+
+                <!-- Input Feedback Line -->
+                <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs text-slate-400 font-mono">Entered:</span>
+                        <span id="inputDisplay" class="font-mono text-cyan-400 tracking-widest font-bold min-h-[24px]">___</span>
+                    </div>
+                    <button onclick="resetKeypad()" class="text-xs text-slate-400 hover:text-slate-200 underline transition">Reset</button>
+                </div>
+
+                <!-- Status Message Output -->
+                <div id="statusMessage" class="hidden text-center text-xs font-mono py-2 rounded-md"></div>
+            </div>
+
+            <!-- Unlock Confirmation Action Button -->
+            <div class="mt-6 text-center">
+                <button id="verifyBtn" onclick="verifyLock()" class="px-8 py-3 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-slate-950 font-bold tracking-wide transition shadow-lg shadow-cyan-600/30 active:scale-95">
+                    Verify & Unlock Content
+                </button>
+            </div>
+        </section>
+
+        <!-- PROTECTED INTERNAL CONTENT SECTION (Initially Hidden) -->
+        <section id="protectedContent" class="hidden space-y-6 transition-all duration-700 opacity-0 transform translate-y-4">
+            
+            <div class="flex items-center justify-between bg-emerald-950/40 border border-emerald-500/30 p-4 rounded-xl text-emerald-400 text-sm font-mono glow-box-emerald">
+                <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path>
+                    </svg>
+                    <span>Status: Gateway Unlocked. Full Content Unlocked.</span>
+                </div>
+                <button onclick="lockPortal()" class="text-xs underline hover:text-emerald-300">Lock Gateway</button>
+            </div>
+
+            <!-- Internal Resource Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Internal Module 1 -->
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl hover:border-slate-700 transition space-y-3">
+                    <div class="w-10 h-10 rounded-lg bg-blue-900/50 border border-blue-500/30 flex items-center justify-center text-blue-400">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-bold text-white">Infrastructure Directory</h4>
+                    <p class="text-sm text-slate-400">Access internal server logs, configuration repositories, and deployment pipelines.</p>
+                </div>
+
+                <!-- Internal Module 2 -->
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl hover:border-slate-700 transition space-y-3">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-900/50 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-bold text-white">System Metrics & Telemetry</h4>
+                    <p class="text-sm text-slate-400">Monitor active network nodes, operational throughput, and real-time status.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900/60 border-t border-slate-800 mt-12 py-6 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 space-y-1">
+            <p>© 2026 Nexus Infrastructure Group LLC. All rights reserved.</p>
+            <p class="font-mono text-slate-600">Secure Access Gateway • System Version 2.4.0</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE VERIFICATION SCRIPT -->
+    <script>
+        const targetCode = "381";
+        let currentInput = "";
+
+        function pressKey(num) {
+            if (currentInput.length < 3) {
+                currentInput += num;
+                updateDisplay();
+            }
+        }
+
+        function resetKeypad() {
+            currentInput = "";
+            updateDisplay();
+            hideStatus();
+        }
+
+        function updateDisplay() {
+            const display = document.getElementById('inputDisplay');
+            display.textContent = currentInput.padEnd(3, '_');
+        }
+
+        function hideStatus() {
+            const status = document.getElementById('statusMessage');
+            status.classList.add('hidden');
+        }
+
+        function verifyLock() {
+            const status = document.getElementById('statusMessage');
+            status.classList.remove('hidden');
+
+            if (currentInput === targetCode) {
+                // Success Handling
+                status.className = "text-center text-xs font-mono py-2 rounded-md bg-emerald-950 text-emerald-400 border border-emerald-800";
+                status.textContent = "VERIFICATION SUCCESSFUL — UNLOCKING...";
+
+                setTimeout(() => {
+                    // Update Lock Icon Visuals
+                    const lockContainer = document.getElementById('lockIconContainer');
+                    const lockIcon = document.getElementById('lockIcon');
+                    
+                    lockContainer.className = "w-16 h-16 mx-auto rounded-full bg-emerald-950/80 border border-emerald-500/50 flex items-center justify-center glow-box-emerald";
+                    lockIcon.className = "w-8 h-8 text-emerald-400";
+                    lockIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path>`;
+
+                    document.getElementById('lockTitle').textContent = "Gateway Unlocked";
+                    document.getElementById('lockSubtitle').textContent = "Visual verification complete. Operational assets revealed below.";
+
+                    // Hide Mechanism & Show Protected Section
+                    document.getElementById('lockMechanism').classList.add('hidden');
+                    document.getElementById('verifyBtn').classList.add('hidden');
+
+                    const protectedSection = document.getElementById('protectedContent');
+                    protectedSection.classList.remove('hidden');
+                    setTimeout(() => {
+                        protectedSection.classList.remove('opacity-0', 'translate-y-4');
+                    }, 50);
+
+                }, 600);
+
+            } else {
+                // Failure Handling
+                status.className = "text-center text-xs font-mono py-2 rounded-md bg-rose-950 text-rose-400 border border-rose-800";
+                status.textContent = "INVALID CODE. PLEASE CHECK THE DISPLAYED PATTERN.";
+                currentInput = "";
+                updateDisplay();
+            }
+        }
+
+        function lockPortal() {
+            // Relock reset mechanism
+            const protectedSection = document.getElementById('protectedContent');
+            protectedSection.classList.add('opacity-0', 'translate-y-4');
+            
+            setTimeout(() => {
+                protectedSection.classList.add('hidden');
+                
+                const lockContainer = document.getElementById('lockIconContainer');
+                const lockIcon = document.getElementById('lockIcon');
+                
+                lockContainer.className = "w-16 h-16 mx-auto rounded-full bg-cyan-950/80 border border-cyan-500/30 flex items-center justify-center glow-box-cyan";
+                lockIcon.className = "w-8 h-8 text-cyan-400";
+                lockIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>`;
+
+                document.getElementById('lockTitle').textContent = "Security Gateway Verification";
+                document.getElementById('lockSubtitle').textContent = "Perform visual verification below by selecting the required security pattern sequence to unseal the protected infrastructure assets.";
+
+                document.getElementById('lockMechanism').classList.remove('hidden');
+                document.getElementById('verifyBtn').classList.remove('hidden');
+                
+                resetKeypad();
+            }, 300);
+        }
+    </script>
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="en" class="h-full bg-slate-950 text-slate-100">
 <head>
