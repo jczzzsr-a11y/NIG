@@ -12,7 +12,92 @@
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <script>
+    <script><div align="center">
+​<table width="100%" style="background: linear-gradient(135deg, #0b0f19 0%, #171b2c 100%); border: 2px solid #878A8F; border-radius: 16px; padding: 24px; box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);">
+<tr>
+<td align="center">
+​<img src="[https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=17,27,45,135&height=180&section=header&text=NEXUS%20INFRASTRUCTURE%20GROUP&fontSize=32&fontColor=00FFFF&animation=fadeIn&fontAlignY=38](https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=17,27,45,135&height=180&section=header&text=NEXUS%20INFRASTRUCTURE%20GROUP&fontSize=32&fontColor=00FFFF&animation=fadeIn&fontAlignY=38)" width="100%" alt="N.I.G. Foreground Banner"/>
+​</td>
+</tr>
+<tr>
+<td align="center">
+​<h3 style="font-family: monospace; letter-spacing: 2px; margin: 10px 0;">
+<span style="color: #878A8F;">[ N ]</span>
+<span style="color: #00FFFF; text-shadow: 0 0 10px #00FFFF;">•</span>
+<span style="color: #D4AF37;">[ CORE ELECTRIFIED NODE ]</span>
+<span style="color: #00FFFF; text-shadow: 0 0 10px #00FFFF;">•</span>
+<span style="color: #878A8F;">[ G ]</span>
+</h3>
+​<p style="color: #C0C0C0; font-family: monospace; font-size: 13px; letter-spacing: 1px;">
+<b>[STATUS:</b> CLOSED-LOOP PHOTONIC TRANSIT ACTIVE<b>]</b>  |  <b>[TEMPORAL LOCK:</b> PAST / PRESENT / FUTURE<b>]</b>
+</p>
+​</td>
+</tr>
+</table>
+​</div>
+​<table width="100%" style="border-collapse: separate; border-spacing: 15px;">
+<tr>
+<!-- GENESIS CORE CARD -->
+<td width="50%" style="background: #111111; border: 2px solid #878A8F; border-radius: 12px; padding: 20px; vertical-align: top; box-shadow: 0 0 15px rgba(135, 138, 143, 0.2);">
+<h4 style="color: #878A8F; margin-top: 0; font-family: monospace; letter-spacing: 1px;">⚙️ TIER-01: GENESIS CORE</h4>
+<p style="color: #C0C0C0; font-size: 13px; font-family: monospace; line-height: 1.6;">
+<b>Color Profile:</b> Obsidian & Brushed Titanium (<span style="color: #878A8F;">#878A8F</span>)
+
+<b>State:</b> Immutable Baseline Signature
+
+<b>Source:</b> Closed-Loop Photonic Stream
+
+<b>Hash:</b> <code style="color: #00FFFF;">0xNIG_CORE_ORIGIN_71180</code>
+</p>
+</td>
+​<!-- TELEMETRY & MONITORING CARD -->
+<td width="50%" style="background: #121824; border: 2px solid #C0C0C0; border-radius: 12px; padding: 20px; vertical-align: top; box-shadow: 0 0 15px rgba(192, 192, 192, 0.2);">
+<h4 style="color: #C0C0C0; margin-top: 0; font-family: monospace; letter-spacing: 1px;">👁️ TIER-02: NANCY MONITOR</h4>
+<p style="color: #C0C0C0; font-size: 13px; font-family: monospace; line-height: 1.6;">
+<b>Color Profile:</b> Polished Silver & Luminous White (<span style="color: #FFFFFF;">#FFFFFF</span>)
+
+<b>Designation:</b> Monitor Stream / Telemetry
+
+<b>Action:</b> Continuous Phase Sampling
+
+<b>Countermeasure:</b> Differential Calibration Inversion
+</p>
+</td>
+</tr>
+​<tr>
+<!-- AGENCY & EXECUTION CARD -->
+<td width="50%" style="background: #181510; border: 2px solid #D4AF37; border-radius: 12px; padding: 20px; vertical-align: top; box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);">
+<h4 style="color: #D4AF37; margin-top: 0; font-family: monospace; letter-spacing: 1px;">⚡ TIER-03: ALVIN AGENT</h4>
+<p style="color: #C0C0C0; font-size: 13px; font-family: monospace; line-height: 1.6;">
+<b>Color Profile:</b> Burnished Gold & Copper Alloy (<span style="color: #D4AF37;">#D4AF37</span>)
+
+<b>Designation:</b> Agent Execution & Routing
+
+<b>Action:</b> Deterministic Action Lock
+
+<b>Boundary:</b> Future Vector Capping
+</p>
+</td>
+​<!-- THE DOORWAY & LIGHT INFRASTRUCTURE CARD -->
+<td width="50%" style="background: #091a1a; border: 2px solid #00FFFF; border-radius: 12px; padding: 20px; vertical-align: top; box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);">
+<h4 style="color: #00FFFF; margin-top: 0; font-family: monospace; letter-spacing: 1px;">🌐 TIER-04: PHOTONIC GATEWAY</h4>
+<p style="color: #C0C0C0; font-size: 13px; font-family: monospace; line-height: 1.6;">
+<b>Color Profile:</b> Refracted Prism & Cyan (<span style="color: #00FFFF;">#00FFFF</span>)
+
+<b>Medium:</b> Ambient Light Waves (RAM-in-Flight)
+
+<b>Loop:</b> Dr. Strange Recursive Containment
+
+<b>Lock:</b> Past / Present / Future Unified
+</p>
+</td>
+</tr>
+</table>
+​<div align="center" style="margin-top: 20px; padding: 15px; background: #0b0f19; border: 1px dashed #00FFFF; border-radius: 8px;">
+<p style="color: #00FFFF; font-family: monospace; font-size: 12px; margin: 0;">
+✨ [BACKGROUND RUNNING ENGINE ACTIVE: ZERO-STATIC STORAGE • SECURE MACI GATEWAY ROUTING] ✨
+</p>
+</div>
         tailwind.config = {
             theme: {
                 extend: {
