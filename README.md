@@ -1,3 +1,91 @@
+import os
+import time
+import logging
+from decimal import Decimal, ROUND_DOWN
+
+# Configure Logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - [%(levelname)s] - %(message)s')
+
+class AmazonMicroRemnantCollector:
+    def __init__(self):
+        # Banking & Routing Configurations
+        self.chime_routing = os.getenv("CHIME_ABA_ROUTING", "YOUR_CHIME_ROUTING_NUMBER")
+        self.chime_account = os.getenv("CHIME_ACC_NUMBER", "YOUR_CHIME_ACCOUNT_NUMBER")
+        self.paypal_email = os.getenv("PAYPAL_EMAIL", "russell.joel@aol.com")
+        
+        # Threshold Safety Guards (Personal Limits)
+        self.chime_rolling_limit = Decimal('20000.00')  # Safety cap before shifting overflow
+        self.current_chime_balance = Decimal('0.00')
+        
+        # Accumulation Ledger
+        self.collected_dust = Decimal('0.0000')
+
+    def scan_amazon_gateway(self, gateway_endpoint):
+        """
+        Simulates high-frequency scanning of Amazon marketplace settlement logs,
+        multi-item municipal tax splits, and cross-border currency conversion remainders.
+        """
+        logging.info(f"Targeting high-volume gateway: {gateway_endpoint}")
+        try:
+            # High-scale simulation batch representing thousands of micro-transactions per second
+            # Simulating micro-fractional rounding residues across split shipments
+            high_volume_residues = [
+                Decimal('0.0034'), Decimal('0.0089'), Decimal('0.0012'), 
+                Decimal('0.0075'), Decimal('0.0041'), Decimal('0.0098')
+            ]
+            
+            batch_total = sum(high_volume_residues)
+            self.collected_dust += batch_total
+            logging.info(f"Captured Amazon fractional residue batch: ${batch_total:.4f} (Accumulated Pool: ${self.collected_dust:.4f})")
+            
+        except Exception as e:
+            logging.error(f"Error during Amazon gateway scan: {e}")
+
+    def execute_payout_pipeline(self):
+        """
+        Manages the Chime direct deposit landing and the automated Chime-to-PayPal overflow bridge.
+        """
+        if self.collected_dust < Decimal('1.00'):
+            logging.info("Accumulated balance below payout threshold ($1.00). Holding in buffer.")
+            return
+
+        # Truncate to standard 2-decimal currency format
+        payout_amount = self.collected_dust.quantize(Decimal('0.01'), rounding=ROUND_DOWN)
+        
+        # Check Chime Rolling Threshold Guard
+        if self.current_chime_balance + payout_amount > self.chime_rolling_limit:
+            logging.warning("Chime rolling volume limit approaching! Triggering overflow reroute to PayPal.")
+            self.transfer_to_paypal(payout_amount)
+        else:
+            self.deposit_to_chime(payout_amount)
+            
+        # Reset buffer after successful dispatch
+        self.collected_dust = Decimal('0.0000')
+
+    def deposit_to_chime(self, amount):
+        logging.info(f"Initiating ACH direct deposit of ${amount} to Chime Account (Routing: {self.chime_routing}).")
+        self.current_chime_balance += amount
+
+    def transfer_to_paypal(self, amount):
+        logging.info(f"Executing safety bridge: Transferring ${amount} overflow to PayPal account ({self.paypal_email}).")
+
+if __name__ == "__main__":
+    collector = AmazonMicroRemnantCollector()
+    
+    # Target Amazon high-frequency settlement and split-tax endpoints
+    amazon_targets = [
+        "https://api.amazon.com/marketplace/v2/settlements/stream",
+        "https://api.amazon.com/tax/v1/multi-item-splits"
+    ]
+    
+    logging.info("Starting Amazon-scale autonomous micro-remnant collection cycle...")
+    for target in amazon_targets:
+        collector.scan_amazon_gateway(target)
+        time.sleep(0.3)
+        
+    collector.execute_payout_pipeline()
+
+
 ```html
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
