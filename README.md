@@ -31,4 +31,3 @@
 ## Overview
 
 **Nexus Infrastructure Group** designs and deploys scalable autonomous infrastructure, material recycling frameworks, and modular transportation system architectures built for enterprise and industrial applications.
-
